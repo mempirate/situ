@@ -27,6 +27,12 @@ This is a **two-pass** process: scan first, then deep-read.
 
 #### Output
 8. Write the report to `reports/YYYY-MM-DD.md` using the format below.
+9. Commit and push the report:
+   ```
+   git add reports/YYYY-MM-DD.md
+   git commit -m "report: YYYY-MM-DD"
+   git push
+   ```
 
 ### Report Format
 
