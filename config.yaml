@@ -1,0 +1,195 @@
+# Situ - Situation Room Configuration
+# Sources and settings for automated intelligence gathering
+
+schedule:
+  daily_digest: "0 8 * * *" # 8am daily
+
+report:
+  output_dir: reports
+  format: markdown
+
+# Topics of interest for relevance filtering
+interests:
+  - zero-knowledge proofs
+  - privacy-preserving technology
+  - MPC / FHE / TEE
+  - distributed systems
+  - cryptography research
+  - ethereum / L2 / rollups
+  - MEV / block building / PBS
+  - agentic commerce / machine payments
+  - peer-to-peer networking
+  - Rust ecosystem
+  - local-first software
+
+sources:
+  dashboards:
+    - name: MPPScan
+      url: https://www.mppscan.com
+      category: agentic-commerce
+      description: Activity scanner for the Machine Payments Protocol
+
+    - name: x402scan
+      url: https://www.x402scan.com
+      category: agentic-commerce
+      description: Activity scanner for the x402 protocol
+
+  news:
+    - name: Hacker News
+      url: https://news.ycombinator.com
+      category: tech
+      description: Top stories from Hacker News
+
+    - name: Lobsters
+      url: https://lobste.rs
+      category: tech
+      description: Top stories from Lobsters
+
+  rss:
+    # Crypto / Blockchain / ZK
+    - name: Flashbots
+      url: https://writings.flashbots.net/rss.xml
+      category: mev
+
+    - name: Vitalik
+      url: https://vitalik.eth.limo/feed.xml
+      category: ethereum
+
+    - name: a16z Crypto
+      url: https://a16zcrypto.substack.com/feed
+      category: crypto
+
+    - name: Bain Capital Crypto
+      url: https://baincapitalcrypto.com/insights/feed/atom/
+      category: crypto
+
+    - name: ZK Mesh
+      url: https://zkmesh.substack.com/feed
+      category: zk
+
+    - name: ZK Security
+      url: https://blog.zksecurity.xyz/feed.xml
+      category: zk
+
+    - name: Zellic Research
+      url: https://www.zellic.io/blog/rss.xml
+      category: security
+
+    - name: Ethereum Foundation
+      url: https://blog.ethereum.org/en/feed.xml
+      category: ethereum
+
+    - name: OP Labs
+      url: https://blog.oplabs.co/rss/
+      category: ethereum
+
+    - name: Ethereal
+      url: https://ethereal.news/rss.xml
+      category: ethereum
+
+    - name: TACEO
+      url: https://blog.taceo.io/atom.xml
+      category: privacy
+
+    - name: Least Authority
+      url: https://leastauthority.com/blog/feed/
+      category: privacy
+
+    - name: Germ Network
+      url: https://www.germnetwork.com/blog?format=rss
+      category: privacy
+
+    - name: Pacific Lane
+      url: https://pacific-lane.com/feed.xml
+      category: crypto
+
+    # Cryptography
+    - name: Decentralized Thoughts
+      url: https://decentralizedthoughts.github.io/feed
+      category: cryptography
+
+    - name: Cryptologie
+      url: https://www.cryptologie.net/feed
+      category: cryptography
+
+    - name: Cryptography Engineering
+      url: https://blog.cryptographyengineering.com/feed/
+      category: cryptography
+
+    - name: MIT Cryptography
+      url: https://news.mit.edu/rss/topic/cryptography
+      category: cryptography
+
+    - name: Feisty Duck
+      url: https://www.feistyduck.com/newsletter/feed
+      category: cryptography
+
+    # Distributed Systems / Networking
+    - name: Brooker
+      url: https://brooker.co.za/blog/rss.xml
+      category: distributed-systems
+
+    - name: Murat Buffalo
+      url: https://muratbuffalo.blogspot.com/feeds/posts/default
+      category: distributed-systems
+
+    - name: Educated Guesswork
+      url: https://educatedguesswork.org/feed/feed.xml
+      category: networking
+
+    - name: Waku
+      url: https://blog.waku.org/rss/
+      category: p2p
+
+    - name: Libp2p
+      url: https://blog.libp2p.io/index.xml
+      category: p2p
+
+    - name: Iroh
+      url: https://www.iroh.computer/rss.xml
+      category: p2p
+
+    - name: Ink & Switch
+      url: https://www.inkandswitch.com/index.xml
+      category: local-first
+
+    # Infrastructure / Rust
+    - name: Cloudflare Research
+      url: https://blog.cloudflare.com/tag/research/rss
+      category: infrastructure
+
+    - name: Fly.io
+      url: https://fly.io/blog/feed.xml
+      category: infrastructure
+
+    - name: This Week in Rust
+      url: https://this-week-in-rust.org/rss.xml
+      category: rust
+
+    - name: Matklad
+      url: https://matklad.github.io/feed.xml
+      category: rust
+
+    - name: Register Spill
+      url: https://registerspill.thorstenball.com/feed
+      category: rust
+
+    - name: Tweedegolf
+      url: https://tweedegolf.nl/feed.xml
+      category: rust
+
+  academic:
+    - name: Cryptology ePrint
+      url: https://eprint.iacr.org/rss/rss.xml
+      category: cryptography
+      description: IACR Cryptology ePrint Archive
+
+    - name: Arxiv Distributed Computing
+      url: https://rss.arxiv.org/atom/cs.DC
+      category: distributed-systems
+      description: Arxiv CS.DC feed
+
+    - name: Arxiv Cryptography
+      url: https://rss.arxiv.org/atom/cs.CR
+      category: cryptography
+      description: Arxiv CS.CR feed
