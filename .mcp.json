@@ -2,7 +2,9 @@
   "mcpServers": {
     "paper-search": {
       "command": "uvx",
-      "args": ["paper-search-mcp"]
+      "args": [
+        "paper-search-mcp"
+      ]
     }
   }
 }
