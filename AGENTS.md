@@ -14,13 +14,15 @@ This is a **two-pass** process: scan first, then deep-read.
    - **RSS feeds**: Use `WebFetch` on each feed URL. Extract titles, links, and publication dates of posts published in the last 24 hours.
    - **Dashboards**: Use `WebFetch` on each dashboard URL. Extract key metrics and any notable changes.
    - **News** (HN/Lobsters): Use `WebFetch` to get the current front page. Filter for stories matching the configured interests.
-   - **Academic feeds**: Use `WebFetch` on each feed. Flag papers whose titles/abstracts match the configured interests.
+   - **Academic feeds**: Use the `paper-search` MCP server tools to search arXiv (cs.DC, cs.CR) and IACR ePrint for recent papers matching the configured interests. Fall back to `WebFetch` on feed URLs if MCP is unavailable.
 3. Filter and rank all discovered items by relevance to the configured `interests` list. Discard noise (token price commentary, generic blockchain hype, unrelated topics).
 4. Select the top items to deep-read (aim for 10-20 most relevant articles/papers).
 
 #### Pass 2: Deep Read
-5. For each selected item, use `WebFetch` on the **actual article/paper URL** (not the RSS feed) to read the full content.
-6. Write a substantive summary of each article based on the full text — not just the RSS title/description. Capture the key arguments, technical contributions, and implications.
+5. For each selected item:
+   - **Blog posts / news**: Use `WebFetch` on the **actual article URL** (not the RSS feed) to read the full content.
+   - **Academic papers**: Use `paper-search` MCP tools to fetch paper details, abstracts, and full text where available. For arXiv papers, fetch the HTML or PDF version for deeper analysis.
+6. Write a substantive summary of each item based on the full text — not just the RSS title/description. Capture the key arguments, technical contributions, and implications.
 7. Identify cross-cutting themes and connections between articles.
 
 #### Output
